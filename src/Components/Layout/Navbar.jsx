@@ -13,7 +13,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const scrollLinks = ['About', 'Our Solutions', 'In Action', 'Technology', 'Benefits', 'Case Use'];
+  const scrollLinks = ['About', 'Our Solutions', 'in-action', 'Technology', 'Benefits', 'Case Use'];
   const isProfilePage = location.pathname.includes('/profile') || location.pathname.includes('/profile');
 
 
@@ -27,7 +27,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <img className="w-8 h-8" src="/logo.svg" alt="Logo" />
+          <img className="w-8 h-8" src="https://i.ibb.co/HLSH1hCk/logos.png" alt="Logo" />
           <h1 className="text-2xl font-semibold">Clin</h1>
         </div>
 

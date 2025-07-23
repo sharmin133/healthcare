@@ -1,15 +1,11 @@
-// src/sections/TechnologySection.js
-import React from 'react';
-// আপনি যদি SolutionCard ব্যবহার করতে চান, তাহলে এটি ইম্পোর্ট করুন
-// import SolutionCard from '../components/ui/SolutionCard';
 
-// কাস্টম কার্ড কম্পোনেন্ট (যদি SolutionCard এর চেয়ে ভিন্ন স্টাইল বা কন্টেন্ট দরকার হয়)
-// অথবা আপনি SolutionCard কেই রিউজ করতে পারেন যদি স্টাইল একই থাকে
+import React from 'react';
+
 const TechnologyCard= ({ icon, title, description, badge }) => {
   return (
     <div className="bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700
                     transform hover:scale-105 transition-transform duration-300 ease-in-out
-                    flex flex-col items-start text-left"> {/* টেক্সট অ্যালাইনমেন্ট বামে */}
+                    flex flex-col items-start text-left"> 
       <div className="mb-4 text-blue-400" style={{ width: '60px', height: '60px' }}>
         {icon}
       </div>
@@ -25,7 +21,7 @@ const TechnologyCard= ({ icon, title, description, badge }) => {
 };
 
 
-// আইকন প্লেসহোল্ডার (স্ক্রিনশটের সাথে সাদৃশ্যপূর্ণ SVG আইকন)
+
 const BrainIcon = () => (
   <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M16 12h1m-1.636 6.364l-.707-.707M6 12H5m1.636 1.636l-.707-.707M12 21v-1m-4.673-1.636l-.707.707M12 12a9 9 0 110 0zm0 0V9a2 2 0 00-2-2h-1a2 2 0 00-2 2v2a2 2 0 002 2h1a2 2 0 002-2v-2z" />
@@ -61,13 +57,14 @@ const Technology = () => {
       icon: <LockClosedIcon />,
       title: 'Robust Data Privacy & Security',
       description: 'Protecting sensitive health information is paramount. Our AI solutions are architected with a security-first approach, incorporating principles like \'zero trust\'. We utilize robust security measures, including comprehensive encryption (both at rest and in transit), role-based access controls, and regular security audits to ensure your data\'s confidentiality and integrity.',
-      badge: 'HIPAA COMPLIANT', // স্ক্রিনশট অনুযায়ী ব্যাজ
+      badge: 'HIPAA COMPLIANT', 
     },
   ];
 
   return (
-    <section id="technology" className="py-16 bg-gray-900 text-white">
-      <div className="container mx-auto px-4">
+    <section id="technology" className="py-16  bg-gray-900 text-white">
+     <div className='mx-24'>
+       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-extrabold text-center mb-4 text-blue-400">
           Our Technology
         </h2>
@@ -87,6 +84,7 @@ const Technology = () => {
           ))}
         </div>
       </div>
+     </div>
     </section>
   );
 };

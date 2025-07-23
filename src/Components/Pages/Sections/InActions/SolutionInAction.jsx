@@ -79,53 +79,69 @@ const SolutionInAction = () => {
   };
 
   return (
-    <section id="in-action" className="py-16 bg-gray-900 text-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-extrabold text-center mb-12 text-blue-400">
-          See Our Solutions in Action
-        </h2>
+   <section
+      id="about"
+      className="relative bg-gray-800  justify-center  bg-cover bg-center text-center text-white" >
+    
+       <div className="max-w-5xl mx-auto py-8 ">
+        <h2 className="text-3xl md:text-4xl font-bold mt-10 mb-10 text-blue-400"> See Our Solutions in Action</h2>
+<div className="flex w-full flex-wrap">
+  {['TranscriptX', 'Chartwright', 'Redactify', 'Validify'].map((title, index, arr) => {
+    const isFirst = index === 0;
+    const isLast = index === arr.length - 1;
+    const widthPercent = 100 / arr.length;
 
-       
-        <div className="flex justify-center space-x-2 mb-8 flex-wrap">
-          {['TranscriptX', 'Chartwright', 'Redactify', 'Validify'].map((title) => (
-            <SolutionCard
+    const roundedClass = isFirst
+      ? 'rounded-tl-xl'
+      : isLast
+      ? 'rounded-tr-xl'
+      : '';
+
+    return (
+      <div key={title} style={{ width: `${widthPercent}%` }}>
+        <SolutionCard
+          title={title}
+          isActive={activeSolutionTab === title}
+          onClick={() => setActiveSolutionTab(title)}
+          roundedClass={roundedClass}
+        />
+      </div>
+    );
+  })}
+</div>
+
+
+    <div className="text-center ">
+      <button 
+        onClick={toggleComparison}
+        className="bg-blue-500 text-gray-300  py-4 px-12 w-full hover:bg-blue-600 transition-colors duration-300"
+      >
+        {isComparisonExpanded ? 'Click to collapse comparison' : 'Click to expand comparison'}
+      </button>
+    </div>
+
+    {/* Conditional Comparison Section */}
+    {isComparisonExpanded && (
+      <div>
+        {/* Example Tabs */}
+        <div className="flex justify-center  flex-wrap">
+          {getExampleTabs().map((title) => (
+            <ExampleTab
               key={title}
               title={title}
-              isActive={activeSolutionTab === title}
-              onClick={() => setActiveSolutionTab(title)}
+              isActive={activeExampleTab === title}
+              onClick={() => handleExampleChange(title)}
             />
           ))}
         </div>
 
-        <div className="text-center mb-8">
-          <button
-            onClick={toggleComparison}
-            className="bg-gray-700 text-gray-300 px-6 py-2 rounded-full hover:bg-gray-600 transition-colors duration-300"
-          >
-            {isComparisonExpanded ? 'Click to collapse comparison' : 'Click to expand comparison'}
-          </button>
-        </div>
-
-
-        {isComparisonExpanded && (
-          <div>
-            {/* Example Tabs */}
-          <div className="flex justify-center space-x-4 mb-8 flex-wrap">
-              {getExampleTabs().map((title) => ( 
-                <ExampleTab
-                  key={title}
-                  title={title}
-                  isActive={activeExampleTab === title}
-                  onClick={() => handleExampleChange(title)}
-                />
-              ))}
-            </div>
-
-            {renderContent()}
-          </div>
-        )}
+        {/* Content Renderer */}
+        {renderContent()}
       </div>
-    </section>
+    )}
+  </div>
+</section>
+
   );
 };
 

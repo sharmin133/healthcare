@@ -7,6 +7,7 @@ import CaseUse from '../Sections/CaseUse/CaseUse';
 import GetStarted from '../Sections/GetStarted/GetStarted';
 import SolutionInAction from '../Sections/InActions/SolutionInAction';
 
+
 const Home = () => {
     return (
         <div>
