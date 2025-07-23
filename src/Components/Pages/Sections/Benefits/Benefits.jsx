@@ -22,7 +22,7 @@ const Benefits = () => {
         <ul className="list-none space-y-4 text-left mx-auto max-w-2xl mb-12">
           {benefitsList.map((benefit, index) => (
             <li key={index} className="flex items-start text-lg text-gray-200">
-              {/* চেক আইকন (আপনি আপনার পছন্দের আইকন ব্যবহার করতে পারেন) */}
+           
               <svg
                 className="flex-shrink-0 w-6 h-6 text-green-400 mr-3 mt-1"
                 fill="none"

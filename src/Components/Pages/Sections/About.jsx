@@ -1,5 +1,6 @@
 // src/sections/HeroSection.jsx
 import React from 'react';
+import { Link, Links } from 'react-router';
 // Optional background image
 // import heroBg from '../assets/images/hero-background.jpg';
 
@@ -43,12 +44,11 @@ const About = () => {
 
         {/* Call-to-action buttons */}
         <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+          <Link to='login' >
           <button className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition duration-300 ease-in-out shadow-lg text-lg font-semibold">
-            Login
-          </button>
-          <button className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-blue-600 transition duration-300 ease-in-out shadow-lg text-lg font-semibold">
-            Signup
-          </button>
+            Login</button></Link>
+         <Link to='register' ><button className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-blue-600 transition duration-300 ease-in-out shadow-lg text-lg font-semibold">
+            Signup</button></Link>
         </div>
       </div>
 

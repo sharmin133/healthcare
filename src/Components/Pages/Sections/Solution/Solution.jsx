@@ -1,6 +1,7 @@
-// src/sections/SolutionsSection.js
+
 import React from 'react';
-import SolutionCard from './SolutionCard';
+
+import SolutionTab from './SolutionTab';
 
 
 // আইকন প্লেসহোল্ডার (আপনি আসল SVG আইকন বা ইমেজ ব্যবহার করতে পারেন)
@@ -66,7 +67,7 @@ const Solution = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2  gap-8">
           {solutions.map((solution, index) => (
-            <SolutionCard
+            <SolutionTab
               key={index}
               icon={solution.icon}
               title={solution.title}
