@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Benefits = () => {
   const benefitsList = [
@@ -10,12 +11,12 @@ const Benefits = () => {
   ];
 
   return (
-    <section id="benefits" className="py-16 bg-gray-900 text-white">
+    <section id="benefits" className="py-16 bg-gray-800 text-white">
       <div className="container mx-auto px-4 text-center max-w-4xl">
         <h2 className="text-4xl font-extrabold text-center mb-4 text-blue-400">
           Benefits
         </h2>
-        <p className="text-lg text-center text-gray-300 mb-12">
+        <p className="text-xl text-center text-gray-300 mb-12">
           Healthcare providers using Clin Technologies solutions report:
         </p>
 
@@ -42,14 +43,18 @@ const Benefits = () => {
           ))}
         </ul>
 
-        <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-          <button className="bg-transparent border-2 border-blue-600 text-blue-400 px-8 py-3 rounded-full hover:bg-blue-600 hover:text-white transition duration-300 ease-in-out shadow-lg text-lg font-semibold">
-            Login
-          </button>
-          <button className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition duration-300 ease-in-out shadow-lg text-lg font-semibold">
-            Signup
-          </button>
-        </div>
+           <div className="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4" data-aos="fade-down" data-aos-delay="600">
+                    <Link to="/login">
+                      <button className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition duration-300 ease-in-out shadow-lg text-lg font-semibold">
+                        Login
+                      </button>
+                    </Link>
+                    <Link to="/register">
+                      <button className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-blue-600 transition duration-300 ease-in-out shadow-lg text-lg font-semibold">
+                        Signup
+                      </button>
+                    </Link>
+                  </div> 
       </div>
     </section>
   );

@@ -55,67 +55,63 @@ const ChartBarIcon = () => (
 
 const Solution = () => {
   return (
-  <section id="solutions" className="py-16  bg-gray-900 text-white">
-  <div className="container px-4">
-    <h2 className="text-4xl font-extrabold text-center mb-4 text-blue-400">
-      Our Solutions
-    </h2>
-    <p className="text-lg text-center text-gray-300 mb-12 mx-auto max-w-3xl">
-      Our comprehensive suite of AI-powered solutions transforms every aspect of healthcare documentation:
-    </p>
-
-   <div className='mx-32'>
-
-     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {/* Card 1 - Validify */}
-      <div className="bg-blue-950 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300 border-t-4 border-green-500">
-        <div className="w-20 h-20 mb-4 bg-green-900 rounded-full flex items-center justify-center">
-          <CheckCircleIcon />
-        </div>
-        <h3 className="text-2xl text-blue-400 font-bold mb-2">Validify</h3>
-        <p className="text-white">
-          Mitigate compliance risk with powerful AI that optimizes chart reviews for accuracy, integrity, coding, and compliance. Validify automatically identifies documentation gaps, ensures coding accuracy, and maintains regulatory compliance.
+    <section id="solution" className="md:py-16 bg-gray-900 text-white">
+      <div className="container px-4">
+        <h2 className="text-4xl font-extrabold text-center mb-4 text-blue-400">
+          Our Solutions
+        </h2>
+        <p className="text-lg text-center text-gray-300 mb-12 mx-auto max-w-3xl">
+          Our comprehensive suite of AI-powered solutions transforms every aspect of healthcare documentation:
         </p>
-      </div>
 
-      {/* Card 2 - Redactify */}
-      <div className="bg-blue-950 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300 border-t-4 border-yellow-400">
-        <div className="w-20 h-20 mb-4 bg-yellow-100 rounded-full flex items-center justify-center">
-          <BanIcon />
+        <div className="md:mx-32 mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <div className="bg-blue-950 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300 border-t-4 border-green-500 transform hover:-translate-y-2">
+              <div className="w-20 h-20 mb-4 bg-green-900 rounded-full flex items-center justify-center">
+                <CheckCircleIcon />
+              </div>
+              <h3 className="text-2xl text-blue-400 font-bold mb-2">Validify</h3>
+              <p className="text-white">
+                Mitigate compliance risk with powerful AI that optimizes chart reviews for accuracy, integrity, coding, and compliance. Validify automatically identifies documentation gaps, ensures coding accuracy, and maintains regulatory compliance.
+              </p>
+            </div>
+
+            <div className="bg-blue-950 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300 border-t-4 border-yellow-400 transform hover:-translate-y-2">
+              <div className="w-20 h-20 mb-4 bg-yellow-100 rounded-full flex items-center justify-center">
+                <BanIcon />
+              </div>
+              <h3 className="text-2xl text-blue-400 font-bold mb-2">Redactify</h3>
+              <p className="text-white">
+                Effortlessly redact HIPAA identifiers from text, documents, and structured data with Redactify – automating your compliance workflow. Protect sensitive patient information while maintaining clinical context.
+              </p>
+            </div>
+
+            <div className="bg-blue-950 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300 border-t-4 border-purple-400 transform hover:-translate-y-2">
+              <div className="w-20 h-20 mb-4 bg-purple-300 rounded-full flex items-center justify-center">
+                <MicrophoneIcon />
+              </div>
+              <h3 className="text-2xl text-blue-400 font-bold mb-2">TranscriptX</h3>
+              <p className="text-white">
+                Spend less time documenting. TranscriptX dictates highly accurate medical transcriptions of patient encounters into text, understanding complex medical terminology and clinical context for superior accuracy.
+              </p>
+            </div>
+
+            <div className="bg-blue-950 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300 border-t-4 border-pink-400 transform hover:-translate-y-2">
+              <div className="w-20 h-20 mb-4 bg-blue-900 rounded-full flex items-center justify-center">
+                <ChartBarIcon />
+              </div>
+              <h3 className="text-2xl text-blue-400 font-bold mb-2">Chartwright</h3>
+              <p className="text-white">
+                Your best friend with charting – turn any normal text into a high-quality chart, delivered exactly how healthcare professionals need it with extensive customization options to match your workflow and documentation standards.
+              </p>
+            </div>
+
+          </div>
         </div>
-        <h3 className="text-2xl text-blue-400 font-bold mb-2">Redactify</h3>
-        <p className="text-white">
-          Effortlessly redact HIPAA identifiers from text, documents, and structured data with Redactify – automating your compliance workflow. Protect sensitive patient information while maintaining clinical context.
-        </p>
       </div>
-
-      {/* Card 3 - TranscriptX */}
-      <div className="bg-blue-950 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300 border-t-4 border-purple-400">
-        <div className="w-20 h-20 mb-4 bg-purple-300 rounded-full flex items-center justify-center">
-          <MicrophoneIcon />
-        </div>
-        <h3 className="text-2xl text-blue-400 font-bold mb-2">TranscriptX</h3>
-        <p className="text-white">
-          Spend less time documenting. TranscriptX dictates highly accurate medical transcriptions of patient encounters into text, understanding complex medical terminology and clinical context for superior accuracy.
-        </p>
-      </div>
-
-      {/* Card 4 - Chartwright */}
-      <div className="bg-blue-950 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300 border-t-4 border-pink-400">
-        <div className="w-20 h-20 mb-4 bg-blue-900 rounded-full flex items-center justify-center">
-          <ChartBarIcon />
-        </div>
-        <h3 className="text-2xl text-blue-400 font-bold mb-2">Chartwright</h3>
-        <p className="text-white">
-         Your best friend with charting – turn any normal text into a high-quality chart, delivered exactly how healthcare professionals need it with extensive customization options to match your workflow and documentation standards.
-        </p>
-      </div>
-    </div>
-   </div>
-  </div>
-</section>
-
-  )
+    </section>
+  );
 };
 
 export default Solution;

@@ -33,7 +33,7 @@ const Register = () => {
 
     const { email, password, confirmPassword, name, username } = formData;
 
-    // Basic validation
+
     if (!email || !password || !confirmPassword || !name || !username) {
       setError('Please fill in all fields.');
       return;
@@ -60,11 +60,11 @@ const Register = () => {
         username,
       });
 
-      // Assuming your backend sends tokens and user_profile on success:
+
       if (response.status === 200 || response.status === 201) {
         login(response.data);
 
-        // ✅ সফল মেসেজ পরিবর্তন করা হয়েছে এবং লগইন পেইজে রিডাইরেক্ট করা হচ্ছে
+     
         setSuccessMessage('Registration successful! Please log in with your new credentials.');
         setFormData({
           email: '',
@@ -73,7 +73,7 @@ const Register = () => {
           name: '',
           username: '',
         });
-        // ✅ ব্যবহারকারীকে /login পেইজে রিডাইরেক্ট করা হচ্ছে
+      
         navigate('/login');
       } else {
         setError('Registration failed. Please try again.');

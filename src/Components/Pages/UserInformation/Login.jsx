@@ -49,7 +49,7 @@ const Login = () => {
    );
 
    if (response.status === 200 || response.status === 201) {
-    login(response.data); // Send data to context
+    login(response.data); 
     setSuccessMessage('Login successful! Redirecting...');
     navigate('/');
    } else {

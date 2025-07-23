@@ -119,7 +119,7 @@ Pharmacy Coordination: Note: Client's preferred pharmacy is ValueCare for future
     setActiveContentTab('DoctorDictation');
   }, [activeExampleTab]);
 
-  // Resizing handlers with refs to avoid re-creating functions
+  
   const handleMouseDown = useCallback((e) => {
     setIsResizing(true);
     isResizingRef.current = true;
@@ -304,7 +304,7 @@ Pharmacy Coordination: Note: Client's preferred pharmacy is ValueCare for future
         </div>
       </div>
 
-      {/* Navigation Buttons */}
+     
       <div className="flex justify-between mt-4 ">
         <button onClick={handlePreviousExample}
           className="px-4 py-2 bg-blue-600 rounded-md hover:bg-blue-700 transition">

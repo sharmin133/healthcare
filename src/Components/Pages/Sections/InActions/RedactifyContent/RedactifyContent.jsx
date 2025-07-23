@@ -18,13 +18,7 @@ const RedactifyContent = ({ activeExampleTab, onExampleChange }) => {
   
   const allDemoContent = {
     'Example 1': {
-//       OriginalNote: {
-//         type: 'Doctor\'s Note', 
-//         content: `Patient Name: Jane Smith DOB: 07/22/1968 Address: 456 Oak Avenue, Springfield, IL 62704 Phone: (217) 555-0199 MRN: JS654321 Date of Visit: 2024-05-21 Attending Physician: Dr. Robert Miller Clinic: Springfield Community Health Clinic.
 
-// Subjective:
-// Ms. Jane Smith, a 55-year-old female, presents for her annual check-up on May 21, 2024. She reports feeling generally well. She mentions occasional lower back pain, especially after prolonged sitting. No fever, chills, or recent illness. She is currently taking Metformin for Type 2 Diabetes. Her last A1c was 6.8%. She lives at REDACT with her husband. Her contact number is REDACT.` 
-//       },
       RedactifyEnhanced: {
         patient: 'REDACT',
         dob: 'REDACT',
@@ -76,10 +70,10 @@ Schedule follow-up appointment in 6 months at Springfield Community Health Clini
   };
 
   useEffect(() => {
-    setActiveContentTab('OriginalNote'); // Default to OriginalNote for Redactify
+    setActiveContentTab('OriginalNote'); 
   }, [activeExampleTab]);
 
-  // Resizing handlers with refs to avoid re-creating functions
+
   const handleMouseDown = useCallback((e) => {
     setIsResizing(true);
     isResizingRef.current = true;
@@ -127,13 +121,13 @@ Schedule follow-up appointment in 6 months at Springfield Community Health Clini
     return <div className="text-center text-red-400">Content not found for this example.</div>;
   }
 
-  // Helper functions for dynamic titles and labels based on the active example
+  
   const getLeftButtonTitle = () => {
     return currentDemo.OriginalNote.type;
   };
 
   const getRightButtonTitle = () => {
-    return 'Redactify Note'; // Consistent for all Redactify examples
+    return 'Redactify Note'; 
   };
 
   const getLeftPanelHeader = () => {
@@ -141,7 +135,7 @@ Schedule follow-up appointment in 6 months at Springfield Community Health Clini
   };
 
   const getRightPanelHeader = () => {
-    return `Redactify AI-Enhanced (HIPAA Compliant)`; // Consistent for all Redactify examples
+    return `Redactify AI-Enhanced (HIPAA Compliant)`; 
   };
 
   const getLeftSecondaryLabel = () => {
@@ -158,7 +152,7 @@ Schedule follow-up appointment in 6 months at Springfield Community Health Clini
 
       <div ref={containerRef} className="flex flex-col md:flex-row h-96">
 
-        {/* Left Panel - Original Note */}
+       
         <div
           className="bg-gray-950 p-4 rounded-l-md overflow-y-auto"
           style={{ flexBasis: `${leftPanelWidth}%`, flexGrow: 0, flexShrink: 0 }}
@@ -183,7 +177,7 @@ Schedule follow-up appointment in 6 months at Springfield Community Health Clini
           <div><pre className="text-gray-200 whitespace-pre-wrap">{currentDemo.OriginalNote.content}</pre></div>
         </div>
 
-        {/* Resizer */}
+     
         <div
           className="relative w-2 bg-gray-600 cursor-ew-resize flex-shrink-0 group"
           onMouseDown={handleMouseDown}
@@ -196,7 +190,7 @@ Schedule follow-up appointment in 6 months at Springfield Community Health Clini
           </div>
         </div>
 
-        {/* Right Panel - Redactify Enhanced */}
+       
         <div
           className="bg-gray-950 p-4 rounded-r-md overflow-y-auto"
           style={{ flexBasis: `${100 - leftPanelWidth}%`, flexGrow: 0, flexShrink: 0 }}>
@@ -229,7 +223,6 @@ Schedule follow-up appointment in 6 months at Springfield Community Health Clini
         </div>
       </div>
 
-      {/* Navigation Buttons */}
       <div className="flex justify-between mt-4 ">
         <button onClick={handlePreviousExample}
           className="px-4 py-2 bg-blue-600 rounded-md hover:bg-blue-700 transition">

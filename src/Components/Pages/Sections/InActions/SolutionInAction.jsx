@@ -80,7 +80,7 @@ const SolutionInAction = () => {
 
   return (
    <section
-      id="about"
+      id="in-action"
       className="relative bg-gray-800  justify-center  bg-cover bg-center text-center text-white" >
     
        <div className="max-w-5xl mx-auto py-8 ">
@@ -120,10 +120,10 @@ const SolutionInAction = () => {
       </button>
     </div>
 
-    {/* Conditional Comparison Section */}
+   
     {isComparisonExpanded && (
       <div>
-        {/* Example Tabs */}
+      
         <div className="flex justify-center  flex-wrap">
           {getExampleTabs().map((title) => (
             <ExampleTab
@@ -135,7 +135,7 @@ const SolutionInAction = () => {
           ))}
         </div>
 
-        {/* Content Renderer */}
+     
         {renderContent()}
       </div>
     )}

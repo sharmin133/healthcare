@@ -15,9 +15,9 @@ const ValidifyContent = ({ activeExampleTab, onExampleChange }) => {
     leftPanelWidthRef.current = leftPanelWidth;
   }, [leftPanelWidth]);
 
-  // All demo content directly copied from Screenshots 451, 452, 453, 454
+
   const allDemoContent = {
-    'Example 1': { // Screenshot (451).jpg
+    'Example 1': {
       ClinicalDocumentation: {
         type: 'Clinical Documentation',
         content: `Patient: John Smith, DOB: 03/15/1968. Encounter Date: 10/26/2023.
@@ -62,7 +62,7 @@ chronic if not specified elsewhere in the record.`,
       },
       title: 'Discover Validify - Optimize Chart Reviews for Compliance & Accuracy (surgical use case)',
     },
-    'Example 3': { // Screenshot (453).jpg
+    'Example 3': { 
       ClinicalDocumentation: {
         type: 'Clinical Documentation',
         content: `Patient: Sarah Miller, DOB: 04/22/1988. Date of Service:
@@ -116,7 +116,7 @@ Requires Confirmation):`
       },
       title: 'Discover Validify - Optimize Chart Reviews for Compliance & Accuracy (Psychologist Use case)',
     },
-    'Example 4': { // Screenshot (454).jpg
+    'Example 4': { 
       ClinicalDocumentation: {
         type: 'Clinical Documentation',
         content: `Patient: Robert Jones, DOB: 07/04/1955. Date: 11/17/2023
@@ -230,19 +230,19 @@ The information provided by Validify is for assistance only. It is based on the 
   };
 
   const getRightButtonTitle = () => {
-    return 'Validify Analysis'; // Consistent for all Validify examples
+    return 'Validify Analysis'; 
   };
 
   const getLeftPanelHeader = () => {
-    return `Original ${currentDemo.ClinicalDocumentation.type} (Nurse Case use)`; // Modified to match screenshot (454).jpg
+    return `Original ${currentDemo.ClinicalDocumentation.type} (Nurse Case use)`; 
   };
 
   const getRightPanelHeader = () => {
-    return `Validify Analysis & Recommendations`; // Consistent for all Validify examples
+    return `Validify Analysis & Recommendations`;
   };
 
   const getLeftSecondaryLabel = () => {
-    // This part varies based on screenshot, 'Original' for Ex1, 'Original (Nurse case use)' for Ex4
+
     if (activeExampleTab === 'Example 4') {
         return 'Original (Nurse case use)';
     }
@@ -259,7 +259,7 @@ The information provided by Validify is for assistance only. It is based on the 
 
       <div ref={containerRef} className="flex flex-col md:flex-row h-96">
 
-        {/* Left Panel - Clinical Documentation */}
+  
         <div
           className="bg-gray-950 p-4 rounded-l-md overflow-y-auto"
           style={{ flexBasis: `${leftPanelWidth}%`, flexGrow: 0, flexShrink: 0 }}
@@ -284,7 +284,7 @@ The information provided by Validify is for assistance only. It is based on the 
           <div><pre className="text-gray-200 whitespace-pre-wrap">{currentDemo.ClinicalDocumentation.content}</pre></div>
         </div>
 
-        {/* Resizer */}
+        
         <div
           className="relative w-2 bg-gray-600 cursor-ew-resize flex-shrink-0 group"
           onMouseDown={handleMouseDown}
@@ -297,7 +297,7 @@ The information provided by Validify is for assistance only. It is based on the 
           </div>
         </div>
 
-        {/* Right Panel - Validify Analysis */}
+ 
         <div
           className="bg-gray-950 p-4 rounded-r-md overflow-y-auto"
           style={{ flexBasis: `${100 - leftPanelWidth}%`, flexGrow: 0, flexShrink: 0 }}>
@@ -330,7 +330,7 @@ The information provided by Validify is for assistance only. It is based on the 
         </div>
       </div>
 
-      {/* Navigation Buttons */}
+
       <div className="flex justify-between mt-4 ">
         <button onClick={handlePreviousExample}
           className="px-4 py-2 bg-blue-600 rounded-md hover:bg-blue-700 transition">

@@ -13,7 +13,14 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const scrollLinks = ['About', 'Our Solutions', 'in-action', 'Technology', 'Benefits', 'Case Use'];
+ const scrollLinks = [
+  { name: 'About', to: 'about' },
+  { name: 'Our Solutions', to: 'solution' },
+  { name: 'In Action', to: 'in-action' },
+  { name: 'Technology', to: 'technology' },
+  { name: 'Benefits', to: 'benefits' },
+  { name: 'Case Use', to: 'case-use' }
+];
   const isProfilePage = location.pathname.includes('/profile') || location.pathname.includes('/profile');
 
 
@@ -25,18 +32,17 @@ const Navbar = () => {
   return (
     <nav className="w-full fixed top-0 z-50 bg-[#0B1120] text-white shadow-lg">
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        {/* Logo */}
+    
         <div className="flex items-center space-x-2">
           <img className="w-8 h-8" src="https://i.ibb.co/HLSH1hCk/logos.png" alt="Logo" />
-          <h1 className="text-2xl font-semibold">Clin</h1>
+          <h1 className="text-2xl font-bold">Clin</h1>
         </div>
 
-        {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
           {!isProfilePage && scrollLinks.map((link, idx) => (
             <ScrollLink
               key={idx}
-              to={link.toLowerCase().replace(/\s/g, '')}
+             to={link.to}
               spy={true}
               smooth={true}
               offset={-80}
@@ -44,7 +50,7 @@ const Navbar = () => {
               activeClass="active"
               className="cursor-pointer relative group transition"
             >
-              <span className="group-hover:text-blue-400">{link}</span>
+              <span className="group-hover:text-blue-400">{link.name}</span>
               <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-500 group-hover:w-full transition-all duration-300 ease-in-out group-[.active]:w-full"></span>
             </ScrollLink>
           ))}
@@ -89,22 +95,24 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Dropdown */}
+    
       {open && (
         <div className="md:hidden bg-[#0B1120] px-6 py-4 space-y-3">
           {!isProfilePage && scrollLinks.map((link, idx) => (
-            <ScrollLink
-              key={idx}
-              to={link.toLowerCase().replace(/\s/g, '')}
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              onClick={() => setOpen(false)}
-              className="block text-white hover:text-blue-400 transition"
-            >
-              {link}
-            </ScrollLink>
+          
+  <ScrollLink
+    key={idx}
+    to={link.to}
+    spy={true}
+    smooth={true}
+  offset={-80}
+    duration={500}
+    onClick={() => setOpen(false)}
+    className="block text-white hover:text-blue-400 transition"
+  >
+    {link.name}
+  </ScrollLink>
+
           ))}
 
           {userProfile && ( 

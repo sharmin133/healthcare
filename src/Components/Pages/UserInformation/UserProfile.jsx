@@ -1,20 +1,19 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 
-import { Link } from 'react-router'; // ✅ Link কে 'react-router-dom' থেকে ইম্পোর্ট করা হয়েছে
+import { Link } from 'react-router';
 import { AuthContext } from '../../Context/AuthContext';
 
 const API_BASE_URL = 'https://backend.gameplanai.co.uk/';
 
 const UserProfile = () => {
-  const { userProfile } = useContext(AuthContext); // AuthContext থেকে userProfile ডেটা নেওয়া হচ্ছে
+  const { userProfile } = useContext(AuthContext); 
   const [profileData, setProfileData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   useEffect(() => {
     const fetchUserProfile = async () => {
-      // localStorage থেকে access_token নেওয়া হচ্ছে
       const accessToken = localStorage.getItem('access_token');
 
       if (!accessToken) {
@@ -25,10 +24,10 @@ const UserProfile = () => {
 
       try {
         setLoading(true);
-        setError(''); // নতুন রিকোয়েস্টের আগে এরর স্টেট রিসেট করা
+        setError('');
         const response = await axios.get(`${API_BASE_URL}authentication_app/user_profile/`, {
           headers: {
-            'Authorization': `Bearer ${accessToken}`, // অথরাইজেশন হেডার যোগ করা
+            'Authorization': `Bearer ${accessToken}`, 
             'Content-Type': 'application/json',
             'Accept': 'application/json',
           },
@@ -41,13 +40,12 @@ const UserProfile = () => {
         }
       } catch (err) {
         if (err.response) {
-          // সার্ভার থেকে এরর রেসপন্স এসেছে
           setError(err.response.data.message || err.response.data.detail || 'Failed to fetch user profile.');
         } else if (err.request) {
-          // রিকোয়েস্ট পাঠানো হয়েছে কিন্তু কোনো রেসপন্স আসেনি (যেমন নেটওয়ার্ক এরর)
+      
           setError('Network error. Please check your internet connection or try again later.');
         } else {
-          // রিকোয়েস্ট সেটআপ করার সময় এরর হয়েছে
+     
           setError('An unexpected error occurred. Please try again.');
         }
         console.error('Error fetching user profile:', err);
@@ -56,8 +54,7 @@ const UserProfile = () => {
       }
     };
 
-    // userProfile পরিবর্তন হলে ডেটা রি-ফেচ করবে
-    // অথবা কম্পোনেন্ট প্রথমবার মাউন্ট হলে ডেটা ফেচ করবে
+  
     fetchUserProfile();
   }, [userProfile]);
 
@@ -90,13 +87,13 @@ const UserProfile = () => {
     );
   }
 
-  // প্রোফাইল ডেটা থাকলে তা প্রদর্শন করুন
+
   return (
     <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl w-full space-y-8 bg-gray-800 p-8 rounded-lg shadow-lg text-white">
         <h2 className="text-3xl font-extrabold text-center mb-6">User Profile</h2>
 
-        {/* ✅ এখানে গ্রিড লেআউট যোগ করা হয়েছে */}
+      
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {Object.entries(profileData).map(([key, value]) => (
             <div key={key} className="flex  justify-between p-3 bg-gray-700 rounded-md">
@@ -108,7 +105,6 @@ const UserProfile = () => {
           ))}
         </div>
 
-        {/* আপনি চাইলে এখানে আরও বাটন বা লিঙ্ক যোগ করতে পারেন */}
         <div className="mt-8 text-center">
           <Link
             to="/"

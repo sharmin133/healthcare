@@ -64,11 +64,11 @@ Overall: Exam within normal limits except for cough.`,
 3. Reassure patient cough should resolve over next 1-2 weeks. OTC cough suppressants acceptable if bothersome at night.
 4. Encourage continued healthy diet and exercise once URI symptoms fully resolved.`,
       },
-      title: 'Experience Chartwright - Clean and Structure Messy Clinical Notes', // From Screenshot 446
+      title: 'Experience Chartwright - Clean and Structure Messy Clinical Notes', 
     },
     'Example 2': {
       MessyOriginal: {
-        type: 'Therapy Note', // From Screenshot 447
+        type: 'Therapy Note', 
         content: `Patinent Name: Emily White Date: 11/04/2023 Seshion #: 8
 Focs: Social anxiety and assertiveness training.
 
