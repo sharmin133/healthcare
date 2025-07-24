@@ -12,6 +12,7 @@ import Login from './Components/Pages/UserInformation/Login.jsx';
 import UserProfile from './Components/Pages/UserInformation/UserProfile.jsx';
 import Register from './Components/Pages/UserInformation/Register.jsx';
 import AuthProvider from './Components/Context/AuthProvider.jsx';
+import VerifyEmail from './Components/Pages/UserInformation/VerifyEmail.jsx';
 
 
 const router = createBrowserRouter([
@@ -31,7 +32,8 @@ const router = createBrowserRouter([
       },
       {
         path:'profile', element: <UserProfile></UserProfile>
-      }
+      },
+    
 
     ]
   },

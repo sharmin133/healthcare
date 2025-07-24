@@ -18,7 +18,13 @@ const RedactifyContent = ({ activeExampleTab, onExampleChange }) => {
   
   const allDemoContent = {
     'Example 1': {
-
+OriginalNote: {
+    type: 'Clinical Note',
+    content: `Ms. Jane Smith, a 55-year-old female, presents for her annual check-up on May 21, 2024. She reports feeling generally well. She mentions occasional lower back pain, especially after prolonged sitting. No fever, chills, or recent illness. She is currently taking Metformin for Type 2 Diabetes. Her last A1c was 6.8%. She lives at 456 Oak Avenue with her husband. Her contact number is (217) 555-0199. Continue Metformin 500mg BID.
+Recommend physical therapy referral for lower back pain evaluation and management.
+Encourage regular exercise and stretching.
+Schedule follow-up appointment in 6 months at Springfield Community Health Clinic with Dr. Miller.`,
+  },
       RedactifyEnhanced: {
         patient: 'REDACT',
         dob: 'REDACT',
@@ -37,8 +43,13 @@ Schedule follow-up appointment in 6 months at Springfield Community Health Clini
       },
       title: 'Experience Redactify - Effortlessly Redact HIPAA Identifiers & Automate Compliance', 
     },
+  
     'Example 2': {
-//      
+//     
+OriginalNote: {
+    type: 'Clinical Note',
+    content: `REDACT (Client ID: REDACT) presented for his scheduled session on REDACT, reporting continued high levels of stress stemming from his job at REDACT. He described a recent critical project deadline and interpersonal difficulties with a colleague, specifically naming REDACT. REDACT lives at REDACT, and mentioned that the stress is impacting his sleep and relationship with his wife, REDACT, and son, REDACT. He stated, "I just feel overwhelmed all the time, and it's hard to switch off when I get home to REDACT." His email is REDACT.Client appeared fatigued but was articulate and engaged throughout the session. Affect was predominantly anxious, with some moments of frustration when discussing work dynamics. No suicidal or homicidal ideation reported. REDACT mentioned an upcoming performance review on REDACT.Client continues to meet criteria for Generalized Anxiety Disorder. Stressors are primarily work-related, with some spillover into home life. Coping mechanisms discussed previously (mindfulness, exercise) are being used intermittently. Client is motivated for change.`,
+  }, 
       RedactifyEnhanced: {
         clientName: 'REDACT',
         

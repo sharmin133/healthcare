@@ -22,7 +22,7 @@ const About = () => {
           muted
           playsInline
         >
-          <source src="/src/assets/images/bg-video.mp4" type="video/mp4" />
+          <source src="/video/Bokeh_Background.mp4" type="video/mp4" />
         </video>
 
         {/* Overlay */}
@@ -87,9 +87,9 @@ const About = () => {
       </div>
 
       {/* About Description Section */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-8 py-12">
+      <div className="md:max-w-5xl mx-auto px-4 sm:px-8 py-12 md:py-16">
         <h2
-          className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-blue-400"
+          className="text-2xl sm:text-3xl text-center md:text-4xl font-bold mb-6 text-blue-400"
           data-aos="fade-down"
           data-aos-delay="600"
         >
@@ -97,15 +97,17 @@ const About = () => {
         </h2>
 
         <p className="text-base sm:text-lg mb-4 text-white" data-aos="fade-down" data-aos-delay="700">
-          Headquartered in the Midwest, Clin Technologies is a <span className="font-bold">specialized AI firm</span> that empowers healthcare providers across the Midwest and beyond to conquer their most pressing operational challenges.
+         
+          Headquartered in the Midwest, Clin Technologies is a <span className="font-bold">specialized AI firm</span> that empowers healthcare providers across the Midwest and beyond to conquer their most pressing operational challenges. We deliver this through a powerful and flexible AI platform that powers both a <span className='font-bold'>suite of ready-to-deploy solutions</span> for documentation and compliance, and the creation of fully bespoke engines for enterprise-level transformation.
         </p>
 
         <p className="text-base sm:text-lg mb-4 text-white" data-aos="fade-down" data-aos-delay="800">
-          Our expertise lies in applying cutting-edge <span className="font-bold">Large Language Models (LLMs) and machine learning (ML)</span> to solve real-world challenges in healthcare documentation.
+        
+          Our expertise lies in applying cutting-edge <span className="font-bold">Large Language Models (LLMs) and machine learning (ML)</span>to solve real-world challenges in healthcare documentation. We partner closely with individual practitioners, clinics, and healthcare organizations, leveraging <span className='text-bold'>meticulously gathered real-world data</span> from professionals to build the exceptionally robust and uniquely effective datasets that power these advanced systems.
         </p>
 
         <p className="text-base sm:text-lg text-white" data-aos="fade-down" data-aos-delay="900">
-          This same proven AI framework serves as the foundation for our enterprise partnerships...
+          This same proven AI framework serves as the foundation for our enterprise partnerships. Whether you need an <span className='text-bold'>immediate solution from our product suite or a strategic partner to build a custom engine</span> for challenges like Utilization Management, we provide the right tool for the job. Our mission is to transform your data into a proprietary asset, enabling data-driven decisions that <span className='font-bold' >eliminate administrative friction</span> and allow you to focus on what matters most.
         </p>
       </div>
     </section>
